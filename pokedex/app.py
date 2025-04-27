@@ -17,8 +17,8 @@ def index():
 
 @app.route("/subscribe", methods=["POST"])
 def subscribe():
-    email = request.form["email"]
-    helper.register_subscriber(get_db(), email)
+    Email = request.form["email"]
+    helper.register_subscriber(get_db(), Email)
     # TODO: add confirmation message
     return redirect(url_for("index"))
 
