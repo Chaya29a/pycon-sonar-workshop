@@ -10,6 +10,7 @@ class ConnectionWrapper:
 
     def get_all_pokemons(self):
         statement = "SELECT * FROM POKEDEX"
+        statement = "SELECT * FROM POKEDEX"
         return self.__conn.execute(statement).fetchall()
 
     def register_subscriber(self, email):
@@ -21,8 +22,8 @@ class ConnectionWrapper:
         except sqlite3.IntegrityError:
             raise ValueError("Email already exists!")
 
-    def cleanup(self, should_close: bool):
-        if should_close:
+    def cleanup(self, Should_close: bool):
+        if Should_close:
             self.__conn.close()
 
 
